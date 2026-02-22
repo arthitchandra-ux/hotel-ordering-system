@@ -31,7 +31,7 @@ export const orderResponseSchema = z.array(orderSchema);
 export type OrderResponse = z.infer<typeof orderSchema>;
 
 const API_URL = import.meta.env.VITE_API_BASE_URL
-    ? `${import.meta.env.VITE_API_BASE_URL}/api/orders`
+    ? `${import.meta.env.VITE_API_BASE_URL}/orders`
     : 'http://localhost:3001/api/orders';
 
 export class OrderService {
@@ -47,7 +47,7 @@ export class OrderService {
 
     static async postToFolio(orderId: string) {
         const PMS_API_URL = import.meta.env.VITE_API_BASE_URL
-            ? `${import.meta.env.VITE_API_BASE_URL}/api/pms/folio`
+            ? `${import.meta.env.VITE_API_BASE_URL}/pms/folio`
             : 'http://localhost:3001/api/pms/folio';
 
         const response = await axios.post(PMS_API_URL, { orderId });

@@ -18,7 +18,7 @@ export const menuResponseSchema = z.array(menuItemSchema);
 
 // Full-Stack Architecture: connect to our real local Next.js/Node API now
 const MENU_API_URL = import.meta.env.VITE_API_BASE_URL
-    ? `${import.meta.env.VITE_API_BASE_URL}/api/menu`
+    ? `${import.meta.env.VITE_API_BASE_URL}/menu`
     : 'http://localhost:3001/api/menu';
 
 export class MenuService {
