@@ -72,11 +72,6 @@ export class TelegramService {
 
         } catch (error) {
             console.error('Failed to send order notification:', error);
-            // Fallback for development/testing if Make.com isn't hooked up yet
-            if (import.meta.env.DEV) {
-                console.warn('Simulating successful webhook in dev mode.');
-                return new Promise(resolve => setTimeout(() => resolve(true), 1500));
-            }
             return false;
         }
     }

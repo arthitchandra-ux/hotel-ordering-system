@@ -35,10 +35,6 @@ export class WhatsAppService {
 
         } catch (error) {
             console.error('Failed to notify staff via WhatsApp:', error);
-            if (import.meta.env.DEV) {
-                console.warn('Simulating successful WhatsApp webhook in dev mode.');
-                return new Promise(resolve => setTimeout(() => resolve(true), 800));
-            }
             return false;
         }
     }
